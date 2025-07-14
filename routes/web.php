@@ -26,6 +26,7 @@ use App\Http\Controllers\ClientController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\TaskController;
 use App\Http\Controllers\ReportController;
+use App\Http\Controllers\SupplierController;
 use App\Http\Livewire\TaskKanban;
 
 /*
@@ -324,6 +325,21 @@ Route::controller(DepartmentController::class)
         // Route::get('detail/{id}',  'show')->name('detail');
         // Route::get('conf-delete/{id}', 'delete')->name('conf-delete');
         // Route::get('delete/{id}', 'destroy')->name('delete');
+    });
+
+    Route::controller(SupplierController::class)
+    ->prefix('supplier')
+    ->as('supplier.')
+    ->middleware('ReuseableMiddleware')
+    ->group(function () {
+        Route::get('index', 'index')->name('index');
+        Route::get('create', 'create')->name('create');
+        Route::post('store', 'store')->name('store');
+        Route::get('/detail/{id}', 'show')->name('detail');
+        Route::get('edit/{id}', 'edit')->name('edit');
+        Route::post('update/{id}', 'update')->name('update');
+        Route::get('conf-delete/{id}', 'delete')->name('conf-delete');
+        Route::get('delete/{id}','destroy')->name('delete');
     });
 
     // Ajax
