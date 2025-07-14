@@ -1,0 +1,185 @@
+.map-container {
+  position: relative;
+  height: 100vh;
+  max-width: 1140px;
+  margin: 0 auto;
+}
+.map-container p {
+  margin: 0;
+}
+.map-container #tooltip {
+  position: absolute;
+  top: 10px;
+  border: 1px solid #666;
+  z-index: 4;
+  width: 200px;
+  border-radius: 4px;
+  display: none;
+  background: white;
+}
+.map-container #tooltip h3 {
+  font-size: 18px;
+  text-transform: uppercase;
+  padding-left: 20px;
+  text-align: left;
+  line-height: normal;
+}
+.map-container #tooltip ul li {
+  text-align: left;
+}
+.map-container #tooltip .map-link {
+  color: #b70000;
+}
+
+.glowing-orb {
+  cursor: pointer;
+  height: 40px;
+  width: 40px;
+  background: #b70000;
+  position: absolute;
+  z-index: 1;
+  border-radius: 100%;
+  animation: glowing 3s infinite;
+}
+.glowing-orb.northerncalifornia {
+  top: 36.8899%;
+  left: 4.12281%;
+}
+.glowing-orb.southerncalifornia {
+  top: 45.97049%;
+  left: 6.75439%;
+  animation-delay: 0.2s;
+  animation-duration: 2s;
+}
+.glowing-orb.california3 {
+  top: 51.64586%;
+  left: 9.38596%;
+  animation-delay: 0.4s;
+  animation-duration: 3s;
+}
+.glowing-orb.newyork {
+  top: 32.00908%;
+  left: 85.61404%;
+}
+.glowing-orb.florida {
+  top: 77.63905%;
+  left: 78.24561%;
+  animation-duration: 2s;
+}
+.glowing-orb.maryland {
+  top: 40.74915%;
+  left: 84.82456%;
+  animation-delay: 0.4s;
+}
+.glowing-orb.newjersey {
+  top: 36.32236%;
+  left: 85.96491%;
+  animation-delay: 0.7s;
+  animation-duration: 2s;
+}
+.glowing-orb.delaware {
+  top: 39.61407%;
+  left: 83.15789%;
+  animation-delay: 0.3s;
+}
+
+@keyframes glowing {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1.5);
+    opacity: 0.0;
+    box-shadow: 0px 0px 0px 10px #b70000;
+  }
+}
+#tooltip ul {
+
+   list-style: none;
+}
+.BiggerGroup{
+
+  font-size: 0px;
+}
+.BiggerGroup text{
+  fill: #164E63;
+}
+
+.stateABB{
+
+  fill: black;
+}
+
+.pdttime path{
+  fill: rgba(0, 0, 0, 0.11);
+}
+
+.mdttime path{
+  fill: rgba(0, 0, 0, 0.11);
+}
+
+.cdttime path{
+  fill: rgba(0, 0, 0, 0.11);
+}
+
+.edttime path{
+  fill: rgba(0, 0, 0, 0.11);
+}
+
+.hsttime path{
+  fill: rgba(0, 0, 0, 0.11);
+}
+.akdttime path{
+  fill: rgba(0, 0, 0, 0.11);
+}
+#clockbox-states-410{
+  font-size: 12px;
+}
+
+#clockbox-states-450{
+  font-size: 14px;
+}
+
+#clockbox-states-430{
+  font-size: 12px;
+}
+
+#clockbox-states-440{
+  font-size: 14px;
+}
+#clockbox-states-420{
+  font-size: 14px;
+}
+
+.close-button{
+  background-color: rgba(255, 66, 66, 0.88);
+  float:right;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.time-table{
+  padding-bottom: 50px;
+
+  text-align: center;
+
+}
+
+.infotable1, .infotable2{
+
+  margin-bottom: 10px;
+}
+.infotable1 td, .infotable2 td{
+
+  font-size: 30px;
+}
+.contentfont2{
+
+  font-size: 30px;
+
+}
+ /*.st20:hover{
+ fill: black!important;
+  font-size: 30px!important;
+
+}*/
