@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Airline;
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class AirlineController extends Controller
 {
@@ -12,7 +13,8 @@ class AirlineController extends Controller
      */
     public function index()
     {
-        //
+        $airline = Airline::all();
+        return view('airlines.index', compact('airline'));
     }
 
     /**
@@ -20,7 +22,7 @@ class AirlineController extends Controller
      */
     public function create()
     {
-        //
+        return view('airlines.create');
     }
 
     /**
@@ -28,7 +30,16 @@ class AirlineController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'code' => 'required|unique:airlines,code',
+            'name' => 'required|max:255',
+        ]);
+        Airline::create([
+            'code' => $request->code,
+            'name' => $request->name,
+        ]);
+        Alert::success('Success', "Airline Updated successfully");
+           return redirect()->route('airline.index');
     }
 
     /**
@@ -42,17 +53,28 @@ class AirlineController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Airline $airline)
+    public function edit($id)
     {
-        //
+        $airline = Airline::find($id);
+        return view('airlines.edit', compact('airline'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Airline $airline)
+    public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'code' => 'required|unique:airlines,code,' . $id,
+            'name' => 'required|max:255',
+        ]);
+        $airline = Airline::find($id);
+        $airline->update([
+            'code' => $request->code,
+            'name' => $request->name,
+        ]);
+        Alert::success('Success', "Airline Updated successfully");
+        return redirect()->route('airline.index');
     }
 
     /**
